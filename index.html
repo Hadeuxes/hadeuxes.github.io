@@ -12,6 +12,7 @@
             --light: #f8f9fa;
             --dark: #343a40;
             --accent: #2a9d8f;
+            --light-blue: #e3f2fd;
         }
         
         * {
@@ -143,14 +144,25 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Sections */
+        /* Page Content */
+        .page {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
         .section {
-            padding: 5rem 2rem;
+            padding: 5rem 0;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .section-title {
@@ -207,7 +219,7 @@
         
         /* Context */
         .context {
-            background-color: #e9f7f6;
+            background-color: var(--light-blue);
         }
         
         .problems-grid {
@@ -551,8 +563,14 @@
             }
             
             .section {
-                padding: 3rem 1.5rem;
+                padding: 3rem 0;
             }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -566,330 +584,340 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#contexto">Contexto</a></li>
-                    <li><a href="#equipo">Equipo</a></li>
-                    <li><a href="#investigacion">Investigación</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#propuestas">Propuestas</a></li>
+                    <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                    <li><a href="#" onclick="showPage('about')">Acerca de</a></li>
+                    <li><a href="#" onclick="showPage('research')">Investigación</a></li>
+                    <li><a href="#" onclick="showPage('results')">Resultados</a></li>
+                    <li><a href="#" onclick="showPage('proposals')">Propuestas</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h2>Construyendo sueños, transformando vidas</h2>
             <p>El CBTIS 253 presenta "Él papalote de los sueños", un proyecto para mejorar las condiciones de vida en la Casa Hogar de Niños, Niñas y Adolescentes de Chetumal, Quintana Roo.</p>
-            <a href="#contexto" class="btn">Conoce más</a>
+            <a href="#" onclick="showPage('home')" class="btn">Conoce más</a>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Introducción al Proyecto</h2>
-                <p>Un compromiso con la niñez vulnerable de Chetumal</p>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Introduction Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Introducción al Proyecto</h2>
+                    <p>Un compromiso con la niñez vulnerable de Chetumal</p>
+                </div>
+                
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h3>Transformando realidades</h3>
+                        <p>Los orfanatos y centros de protección infantil en Chetumal, Quintana Roo, enfrentan diversos problemas estructurales y operativos que afectan la calidad de vida de los menores bajo su resguardo.</p>
+                        <p>Es por eso que el CBTIS 253 está iniciando un proyecto llamado "Él papalote de los sueños" para destacar problemáticas que se encuentran dentro de la Casa Hogar y tratar de dar soluciones a estos problemas al igual que apoyar a la misma institución.</p>
+                        <p>Nuestro objetivo es crear conciencia, movilizar recursos y generar soluciones sostenibles para mejorar las condiciones de vida de los niños, niñas y adolescentes en situación de vulnerabilidad.</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Niños en casa hogar">
+                    </div>
+                </div>
             </div>
-            
-            <div class="intro-content">
+        </section>
+
+        <!-- Context Section -->
+        <section class="section context">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contexto de la Casa Hogar</h2>
+                    <p>La realidad detrás de las puertas de la institución</p>
+                </div>
+                
                 <div class="intro-text">
-                    <h3>Transformando realidades</h3>
-                    <p>Los orfanatos y centros de protección infantil en Chetumal, Quintana Roo, enfrentan diversos problemas estructurales y operativos que afectan la calidad de vida de los menores bajo su resguardo.</p>
-                    <p>Es por eso que el CBTIS 253 está iniciando un proyecto llamado "Él papalote de los sueños" para destacar problemáticas que se encuentran dentro de la Casa Hogar y tratar de dar soluciones a estos problemas al igual que apoyar a la misma institución.</p>
-                    <p>Nuestro objetivo es crear conciencia, movilizar recursos y generar soluciones sostenibles para mejorar las condiciones de vida de los niños, niñas y adolescentes en situación de vulnerabilidad.</p>
+                    <p>La <strong>Casa Hogar de Niños, Niñas y Adolescentes de Chetumal</strong>, oficialmente llamada "Ciudad de las Niñas, Niños y Adolescentes", es un centro de asistencia social gestionado por el <strong>DIF Quintana Roo</strong> que brinda protección integral a menores en situación de vulnerabilidad.</p>
+                    <p>Dentro de esta instalación se pretende que sea un ambiente seguro y amoroso para los niños, niñas y adolescentes, pero no siempre es así, destacándose problemáticas que requieren atención urgente.</p>
                 </div>
-                <div class="intro-image">
-                    <img src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Niños en casa hogar">
+                
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Problemas Principales</h4>
+                        <p>Casos documentados han revelado prácticas de violencia institucionalizada, como encierros en baños oscuros y exhibiciones punitivas. Además, se reportan condiciones de vida inadecuadas, incluyendo alimentación en mal estado y falta de higiene.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h4><i class="fas fa-running"></i> Fugas de Menores</h4>
+                        <p>La fuga de menores de la Casa de Asistencia Temporal del DIF municipal evidencia la desesperación de los niños ante condiciones de vida insostenibles. Expertos señalan que estos actos reflejan violencia adultista institucionalizada.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h4><i class="fas fa-users-slash"></i> Escasez de Recursos</h4>
+                        <p>La falta de recursos financieros y humanos adecuados afecta la atención integral de los menores. Esto se traduce en deficiencias en áreas como salud, educación y desarrollo emocional.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h4><i class="fas fa-hand-holding-usd"></i> Explotación Infantil</h4>
+                        <p>Aunque en menor escala que en otras regiones, se han detectado casos de explotación laboral infantil y mendicidad forzada en Chetumal. La cifra exacta de casos sigue siendo incierta.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Context Section -->
-    <section class="section context" id="contexto">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contexto de la Casa Hogar</h2>
-                <p>La realidad detrás de las puertas de la institución</p>
-            </div>
-            
-            <div class="intro-text">
-                <p>La <strong>Casa Hogar de Niños, Niñas y Adolescentes de Chetumal</strong>, oficialmente llamada "Ciudad de las Niñas, Niños y Adolescentes", es un centro de asistencia social gestionado por el <strong>DIF Quintana Roo</strong> que brinda protección integral a menores en situación de vulnerabilidad.</p>
-                <p>Dentro de esta instalación se pretende que sea un ambiente seguro y amoroso para los niños, niñas y adolescentes, pero no siempre es así, destacándose problemáticas que requieren atención urgente.</p>
-            </div>
-            
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Problemas Principales</h4>
-                    <p>Casos documentados han revelado prácticas de violencia institucionalizada, como encierros en baños oscuros y exhibiciones punitivas. Además, se reportan condiciones de vida inadecuadas, incluyendo alimentación en mal estado y falta de higiene.</p>
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestro Equipo</h2>
+                    <p>Estudiantes comprometidos con el cambio social</p>
                 </div>
                 
-                <div class="problem-card">
-                    <h4><i class="fas fa-running"></i> Fugas de Menores</h4>
-                    <p>La fuga de menores de la Casa de Asistencia Temporal del DIF municipal evidencia la desesperación de los niños ante condiciones de vida insostenibles. Expertos señalan que estos actos reflejan violencia adultista institucionalizada.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Margarita Yocelín Roa Alegría</h4>
+                            <p>Coordinadora General</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Jesús Fernando Conde Rivero</h4>
+                            <p>Investigador Principal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>María José García Estrella</h4>
+                            <p>Analista de Datos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Renata Aguilar Ganagusico</h4>
+                            <p>Desarrollador Web</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>José Aron Hernández Hoy</h4>
+                            <p>Diseñador Web</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Shaddai Alejandra Echeverria Ávila</h4>
+                            <p>Creador de Contenido Multimedia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Fausto Emilio Huerta Quijano</h4>
+                            <p>Redactor de Contenido</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="problem-card">
-                    <h4><i class="fas fa-users-slash"></i> Escasez de Recursos</h4>
-                    <p>La falta de recursos financieros y humanos adecuados afecta la atención integral de los menores. Esto se traduce en deficiencias en áreas como salud, educación y desarrollo emocional.</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h4><i class="fas fa-hand-holding-usd"></i> Explotación Infantil</h4>
-                    <p>Aunque en menor escala que en otras regiones, se han detectado casos de explotación laboral infantil y mendicidad forzada en Chetumal. La cifra exacta de casos sigue siendo incierta.</p>
+                <div class="intro-text" style="margin-top: 3rem;">
+                    <h3>Objetivos del Proyecto</h3>
+                    <p>De parte del CBTIS 253 nosotros como estudiantes pretendemos generar un impacto real en la comunidad de Chetumal para mejorar las condiciones de los niños, niñas y adolescentes de la Casa Hogar.</p>
+                    <p>Nuestra investigación se basa en la infografía previa que puedes consultar aquí: <a href="https://www.canva.com/design/DAGmnIfxiPc/nC1YdVI278zmfV4CU3UnlA/edit?utm_content=DAGmnIfxiPc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver infografía</a></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Team Section -->
-    <section class="section" id="equipo">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestro Equipo</h2>
-                <p>Estudiantes comprometidos con el cambio social</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
+    <!-- Research Page -->
+    <div id="research" class="page">
+        <section class="section context">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestra Investigación</h2>
+                    <p>Metodología y proceso para comprender la problemática</p>
+                </div>
+                
+                <div class="methodology-steps">
+                    <div class="step">
+                        <h4>Extracción de datos clave</h4>
+                        <p>Identificamos cifras críticas (66 niños actuales, 232 en 2020) y contrastamos logros (3 nuevas villas) con problemas persistentes (castigos, intentos de suicidio).</p>
                     </div>
-                    <div class="member-info">
-                        <h4>Margarita Yocelín Roa Alegría</h4>
-                        <p>Coordinadora General</p>
+                    
+                    <div class="step">
+                        <h4>Priorización de urgencias</h4>
+                        <p>Clasificamos los problemas en categorías: críticos (suicidio/maltrato), urgentes (falta alimentos/higiene) y estructurales (baja adopción).</p>
+                    </div>
+                    
+                    <div class="step">
+                        <h4>Enfoque en soluciones</h4>
+                        <p>Transformamos problemas en acciones concretas, proponiendo soluciones adaptadas al contexto específico de la Casa Hogar.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <h4>Adaptación web</h4>
+                        <p>Desarrollamos contenido con palabras clave emocionales ("Hogar", "Protección", "Futuro") para conectar con la audiencia y movilizar apoyo.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <h4>Principios éticos</h4>
+                        <p>Aplicamos sensibilidad en el tratamiento de la información, suavizando términos crudos y garantizando confidencialidad para los residentes y encuestados.</p>
                     </div>
                 </div>
                 
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>Jesús Fernando Conde Rivero</h4>
-                        <p>Investigador Principal</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>María José García Estrella</h4>
-                        <p>Analista de Datos</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>Renata Aguilar Ganagusico</h4>
-                        <p>Desarrollador Web</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>José Aron Hernández Hoy</h4>
-                        <p>Diseñador Web</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>Shaddai Alejandra Echeverria Ávila</h4>
-                        <p>Creador de Contenido Multimedia</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="member-info">
-                        <h4>Fausto Emilio Huerta Quijano</h4>
-                        <p>Redactor de Contenido</p>
-                    </div>
+                <div style="margin-top: 3rem; text-align: center;">
+                    <h3>Participa en nuestra encuesta</h3>
+                    <p>Para enriquecer la investigación realizamos una encuesta a la comunidad de Chetumal sobre la situación de la Casa Hogar:</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeif7PZ9vfJbUQu5-U0_WfSpRsEtMRGsUn3X-0fQZnHil2vIw/viewform?usp=header" class="btn" target="_blank" style="margin-top: 1rem;">
+                        Responder encuesta
+                    </a>
                 </div>
             </div>
-            
-            <div class="intro-text" style="margin-top: 3rem;">
-                <h3>Objetivos del Proyecto</h3>
-                <p>De parte del CBTIS 253 nosotros como estudiantes pretendemos generar un impacto real en la comunidad de Chetumal para mejorar las condiciones de los niños, niñas y adolescentes de la Casa Hogar.</p>
-                <p>Nuestra investigación se basa en la infografía previa que puedes consultar aquí: <a href="https://www.canva.com/design/DAGmnIfxiPc/nC1YdVI278zmfV4CU3UnlA/edit?utm_content=DAGmnIfxiPc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver infografía</a></p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Research Section -->
-    <section class="section context" id="investigacion">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestra Investigación</h2>
-                <p>Metodología y proceso para comprender la problemática</p>
+    <!-- Results Page -->
+    <div id="results" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Resultados</h2>
+                    <p>Hallazgos clave de nuestra investigación</p>
+                </div>
+                
+                <div class="results-container">
+                    <div>
+                        <h3>Análisis de la encuesta</h3>
+                        <p>Realizamos un análisis de la encuesta aplicada a la comunidad de Chetumal, obteniendo los siguientes datos:</p>
+                        
+                        <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                            <li>El 61.1% de los encuestados está dispuesto a ayudar a la Casa Hogar</li>
+                            <li>Las formas de apoyo más mencionadas fueron donaciones, voluntariado y difusión</li>
+                            <li>La comunidad identifica la falta de recursos como el principal problema</li>
+                            <li>Existe preocupación por las condiciones de vida de los menores</li>
+                        </ul>
+                        
+                        <div style="margin-top: 2rem;">
+                            <h4>Interpretación de datos</h4>
+                            <p>Los resultados muestran una comunidad sensibilizada y dispuesta a colaborar, especialmente a través de apoyo material. Esto refuerza la importancia de crear canales estructurados de donación y participación voluntaria.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <h3 style="text-align: center;">Disposición para apoyar</h3>
+                        <div class="chart">
+                            <div class="bar" style="height: 70%;">
+                                <span class="bar-value">61.1%</span>
+                                <span class="bar-label">Sí</span>
+                            </div>
+                            <div class="bar" style="height: 30%;">
+                                <span class="bar-value">22.2%</span>
+                                <span class="bar-label">Quizás</span>
+                            </div>
+                            <div class="bar" style="height: 16.7%;">
+                                <span class="bar-value">16.7%</span>
+                                <span class="bar-label">No</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="methodology-steps">
-                <div class="step">
-                    <h4>Extracción de datos clave</h4>
-                    <p>Identificamos cifras críticas (66 niños actuales, 232 en 2020) y contrastamos logros (3 nuevas villas) con problemas persistentes (castigos, intentos de suicidio).</p>
-                </div>
-                
-                <div class="step">
-                    <h4>Priorización de urgencias</h4>
-                    <p>Clasificamos los problemas en categorías: críticos (suicidio/maltrato), urgentes (falta alimentos/higiene) y estructurales (baja adopción).</p>
-                </div>
-                
-                <div class="step">
-                    <h4>Enfoque en soluciones</h4>
-                    <p>Transformamos problemas en acciones concretas, proponiendo soluciones adaptadas al contexto específico de la Casa Hogar.</p>
-                </div>
-                
-                <div class="step">
-                    <h4>Adaptación web</h4>
-                    <p>Desarrollamos contenido con palabras clave emocionales ("Hogar", "Protección", "Futuro") para conectar con la audiencia y movilizar apoyo.</p>
-                </div>
-                
-                <div class="step">
-                    <h4>Principios éticos</h4>
-                    <p>Aplicamos sensibilidad en el tratamiento de la información, suavizando términos crudos y garantizando confidencialidad para los residentes y encuestados.</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <h3>Participa en nuestra encuesta</h3>
-                <p>Para enriquecer la investigación realizamos una encuesta a la comunidad de Chetumal sobre la situación de la Casa Hogar:</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeif7PZ9vfJbUQu5-U0_WfSpRsEtMRGsUn3X-0fQZnHil2vIw/viewform?usp=header" class="btn" target="_blank" style="margin-top: 1rem;">
-                    Responder encuesta
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Results Section -->
-    <section class="section" id="resultados">
-        <div class="container">
-            <div class="section-title">
-                <h2>Resultados</h2>
-                <p>Hallazgos clave de nuestra investigación</p>
-            </div>
-            
-            <div class="results-container">
-                <div>
-                    <h3>Análisis de la encuesta</h3>
-                    <p>Realizamos un análisis de la encuesta aplicada a la comunidad de Chetumal, obteniendo los siguientes datos:</p>
+    <!-- Proposals Page -->
+    <div id="proposals" class="page">
+        <section class="section context">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestras Propuestas</h2>
+                    <p>Soluciones concretas para transformar realidades</p>
+                </div>
+                
+                <div class="intro-text">
+                    <h3>Soluciones basadas en la investigación</h3>
+                    <p>Se obtuvieron diversas propuestas de soluciones al problema en las cuales el 61.1% estaba de acuerdo con ayudar en la Casa Hogar. Las respuestas más destacadas fueron:</p>
                     
-                    <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
-                        <li>El 61.1% de los encuestados está dispuesto a ayudar a la Casa Hogar</li>
-                        <li>Las formas de apoyo más mencionadas fueron donaciones, voluntariado y difusión</li>
-                        <li>La comunidad identifica la falta de recursos como el principal problema</li>
-                        <li>Existe preocupación por las condiciones de vida de los menores</li>
-                    </ul>
-                    
-                    <div style="margin-top: 2rem;">
-                        <h4>Interpretación de datos</h4>
-                        <p>Los resultados muestran una comunidad sensibilizada y dispuesta a colaborar, especialmente a través de apoyo material. Esto refuerza la importancia de crear canales estructurados de donación y participación voluntaria.</p>
+                    <div style="display: flex; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-gift"></i> Donaciones</h4>
+                            <p>Recolección de víveres, dinero, ropa y artículos de higiene para cubrir necesidades básicas de los menores.</p>
+                        </div>
+                        
+                        <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-hands-helping"></i> Voluntariado</h4>
+                            <p>Programa estructurado de participación comunitaria para apoyo educativo, emocional y recreativo.</p>
+                        </div>
+                        
+                        <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-bullhorn"></i> Difusión</h4>
+                            <p>Campaña de concientización sobre la situación de la Casa Hogar y formas de apoyo.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="chart-container">
-                    <h3 style="text-align: center;">Disposición para apoyar</h3>
-                    <div class="chart">
-                        <div class="bar" style="height: 70%;">
-                            <span class="bar-value">61.1%</span>
-                            <span class="bar-label">Sí</span>
+                <div class="intro-text">
+                    <h3>Plan de acción concreto</h3>
+                    <p>Teniendo en cuenta la opinión de la comunidad de Chetumal, desarrollamos un plan para apoyar a la Casa Hogar desde el CBTIS 253 "Miguel Hidalgo y Costilla":</p>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
+                        <h4 style="text-align: center; color: var(--accent); margin-bottom: 1.5rem;">🎯 Objetivo General</h4>
+                        <p style="text-align: center; font-size: 1.2rem; font-weight: 500;">Recaudar 500 kg de víveres + 200 kits de higiene en 3 semanas, mientras sensibiliza al 80% de la comunidad estudiantil sobre la situación de la Casa Hogar.</p>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Semana 1: Preparación</h4>
+                                <p><strong>Acciones:</strong> Charla informativa, diseño de material visual, alianza con 5 comercios locales.</p>
+                                <p><strong>Responsables:</strong> Maestros, DIF, Comité de arte, Equipo de logística.</p>
+                            </div>
                         </div>
-                        <div class="bar" style="height: 30%;">
-                            <span class="bar-value">22.2%</span>
-                            <span class="bar-label">Quizás</span>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Semana 2: Recaudación</h4>
+                                <p><strong>Campañas:</strong> "Kilogramo Solidario" (1 kg arroz/frijol = sticker), "Kits de Dignidad" (jabón, pasta, cepillo, toallas), participación de tiendas aliadas (cupones de descuento por donación).</p>
+                            </div>
                         </div>
-                        <div class="bar" style="height: 16.7%;">
-                            <span class="bar-value">16.7%</span>
-                            <span class="bar-label">No</span>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Semana 3: Entrega + Difusión</h4>
+                                <p>Entrega simbólica con fotos/video autorizadas, viralización en redes (TikTok/Reels con infografía), muro de agradecimientos en la escuela.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Proposals Section -->
-    <section class="section context" id="propuestas">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestras Propuestas</h2>
-                <p>Soluciones concretas para transformar realidades</p>
-            </div>
-            
-            <div class="intro-text">
-                <h3>Soluciones basadas en la investigación</h3>
-                <p>Se obtuvieron diversas propuestas de soluciones al problema en las cuales el 61.1% estaba de acuerdo con ayudar en la Casa Hogar. Las respuestas más destacadas fueron:</p>
-                
-                <div style="display: flex; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-gift"></i> Donaciones</h4>
-                        <p>Recolección de víveres, dinero, ropa y artículos de higiene para cubrir necesidades básicas de los menores.</p>
-                    </div>
-                    
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-hands-helping"></i> Voluntariado</h4>
-                        <p>Programa estructurado de participación comunitaria para apoyo educativo, emocional y recreativo.</p>
-                    </div>
-                    
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 250px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-bullhorn"></i> Difusión</h4>
-                        <p>Campaña de concientización sobre la situación de la Casa Hogar y formas de apoyo.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="intro-text">
-                <h3>Plan de acción concreto</h3>
-                <p>Teniendo en cuenta la opinión de la comunidad de Chetumal, desarrollamos un plan para apoyar a la Casa Hogar desde el CBTIS 253 "Miguel Hidalgo y Costilla":</p>
-                
-                <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
-                    <h4 style="text-align: center; color: var(--accent); margin-bottom: 1.5rem;">🎯 Objetivo General</h4>
-                    <p style="text-align: center; font-size: 1.2rem; font-weight: 500;">Recaudar 500 kg de víveres + 200 kits de higiene en 3 semanas, mientras sensibiliza al 80% de la comunidad estudiantil sobre la situación de la Casa Hogar.</p>
-                </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Semana 1: Preparación</h4>
-                            <p><strong>Acciones:</strong> Charla informativa, diseño de material visual, alianza con 5 comercios locales.</p>
-                            <p><strong>Responsables:</strong> Maestros, DIF, Comité de arte, Equipo de logística.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Semana 2: Recaudación</h4>
-                            <p><strong>Campañas:</strong> "Kilogramo Solidario" (1 kg arroz/frijol = sticker), "Kits de Dignidad" (jabón, pasta, cepillo, toallas), participación de tiendas aliadas (cupones de descuento por donación).</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Semana 3: Entrega + Difusión</h4>
-                            <p>Entrega simbólica con fotos/video autorizadas, viralización en redes (TikTok/Reels con infografía), muro de agradecimientos en la escuela.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -908,20 +936,19 @@
             <div class="footer-section">
                 <h3>Enlaces rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#contexto">Contexto</a></li>
-                    <li><a href="#equipo">Nuestro equipo</a></li>
-                    <li><a href="#investigacion">Investigación</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#propuestas">Propuestas</a></li>
+                    <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                    <li><a href="#" onclick="showPage('about')">Acerca de</a></li>
+                    <li><a href="#" onclick="showPage('research')">Investigación</a></li>
+                    <li><a href="#" onclick="showPage('results')">Resultados</a></li>
+                    <li><a href="#" onclick="showPage('proposals')">Propuestas</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Calle Sac-Xan #555 Col. Solidaridad, C.P. 77086 Chetumal, Quintana Roo, México</p>
-                <p><i class="fas fa-envelope"></i>cbtis253.dir@dgeti.sems.gob.mx</p>
-                <p><i class="fas fa-phone"></i> Teléfono: +52 983-180-7371</p>
+                <p><i class="fas fa-map-marker-alt"></i> CBTIS 253, Chetumal, Quintana Roo</p>
+                <p><i class="fas fa-envelope"></i> contacto@elpapalotedelossuenos.org</p>
+                <p><i class="fas fa-phone"></i> +52 983 123 4567</p>
             </div>
         </div>
         
@@ -931,6 +958,22 @@
     </footer>
 
     <script>
+        // Función para mostrar la página seleccionada
+        function showPage(pageId) {
+            // Ocultar todas las páginas
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Mostrar la página seleccionada
+            document.getElementById(pageId).classList.add('active');
+            
+            // Desplazarse al principio de la página
+            window.scrollTo(0, 0);
+            
+            return false; // Prevenir comportamiento predeterminado del enlace
+        }
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -957,11 +1000,3 @@
 </body>
 </html>
            
-       
-  
-
-                
-          
-          
-       
- 
