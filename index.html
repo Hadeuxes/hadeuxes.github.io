@@ -854,6 +854,383 @@
                     <div class="infographic-title">
                         Infografía: "UN HOGAR EN LA ENCRUCIJADA"
                     </div>
+                    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Él papalote de los sueños</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4a7b9d;
+            --secondary: #e76f51;
+            --accent: #2a9d8f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #2c3e50);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .logo span {
+            font-size: 1rem;
+            opacity: 0.8;
+            display: block;
+            margin-top: 4px;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .info-box h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box h3 i {
+            color: var(--accent);
+        }
+        
+        .infographic-container {
+            background: linear-gradient(145deg, #ffffff, #f0f8ff);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+            border: 1px solid #e0e7ff;
+            position: relative;
+        }
+        
+        .infographic-header {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .infographic-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .infographic-content {
+            position: relative;
+            width: 100%;
+            padding-top: 250%; /* Mantenemos la relación de aspecto */
+            overflow: hidden;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .infographic-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .infographic-footer {
+            background: rgba(42, 157, 143, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid #e0e7ff;
+        }
+        
+        .infographic-link {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+            margin-top: 1rem;
+        }
+        
+        .infographic-link:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 111, 81, 0.3);
+        }
+        
+        .description-box {
+            background: rgba(42, 157, 143, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .description-box p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .infographic-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .infographic-content {
+                padding-top: 300%;
+            }
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-child"></i>
+                <div>
+                    <h1>Él papalote de los sueños</h1>
+                    <span>Proyecto del CBTIS 253</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <p>Infografía de investigación sobre la Casa Hogar</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="section-title animated">
+            <h2>Infografía del Proyecto</h2>
+            <p>"UN HOGAR EN LA ENCRUCIJADA" - Investigación sobre la Casa Hogar de Chetumal</p>
+        </div>
+        
+        <div class="info-box animated">
+            <h3><i class="fas fa-info-circle"></i> Sobre esta infografía</h3>
+            <p>Esta infografía presenta los hallazgos clave de nuestra investigación sobre la Casa Hogar de Niños, Niñas y Adolescentes de Chetumal. Revela datos importantes sobre las condiciones de vida de los menores, los desafíos que enfrentan y las propuestas para mejorar su situación.</p>
+        </div>
+        
+        <div class="infographic-container animated">
+            <div class="infographic-header">
+                <h2>UN HOGAR EN LA ENCRUCIJADA</h2>
+                <p>Investigación sobre la Casa Hogar de Chetumal</p>
+            </div>
+            
+            <div class="infographic-content">
+                <iframe 
+                    class="infographic-iframe"
+                    src="https://www.canva.com/design/DAGmnIfxiPc/uhYDyxIzkt7iwymtfpIb9Q/view?embed" 
+                    allowfullscreen="allowfullscreen" 
+                    allow="fullscreen">
+                </iframe>
+            </div>
+
+            <div class="infographic-footer">
+                <p>Infografía creada por Margarita Roa Alegría</p>
+                <a href="https://www.canva.com/design/DAGmnIfxiPc/uhYDyxIzkt7iwymtfpIb9Q/view?utm_content=DAGmnIfxiPc&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
+                   class="infographic-link" 
+                   target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Ver infografía completa en Canva
+                </a>
+            </div>
+        </div>
+        
+        <div class="description-box animated">
+            <h3><i class="fas fa-lightbulb"></i> Hallazgos clave</h3>
+            <p>La infografía revela que aproximadamente 66 niños, niñas y adolescentes viven actualmente en la Casa Hogar de Chetumal. La institución, operada por el DIF Quintana Roo, ofrece un entorno seguro para menores en situación de vulnerabilidad desde su nacimiento hasta los 18 años.</p>
+            <p>Entre los problemas detectados se encuentran la baja tasa de adopción (especialmente para niños con discapacidad), falta de alimentos y artículos de higiene para menores de 12 años, y casos de maltrato psicológico y restricción de alimentos para adolescentes.</p>
+            <p>Como parte de las propuestas, se plantea mejorar las condiciones básicas de vida, garantizar atención integral sin maltrato, fomentar la adopción y establecer un sistema de monitoreo constante por parte de las autoridades.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Él papalote de los sueños - Proyecto del CBTIS 253. Todos los derechos reservados.</p>
+                <p>Chetumal, Quintana Roo, México</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Añadir clase animated a todos los elementos que deben animarse
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animated');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+            });
+            
+            setTimeout(() => {
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                    }, 200 * index);
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
                     <img src="https://via.placeholder.com/800x600?text=Infografía+Casa+Hogar" alt="Infografía sobre la Casa Hogar" class="infographic-image">
                     <a href="https://www.canva.com/design/DAGmnIfxiPc/nC1YdVI278zmfV4CU3UnlA/edit?utm_content=DAGmnIfxiPc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="infographic-link">
                         Ver infografía completa en Canva
