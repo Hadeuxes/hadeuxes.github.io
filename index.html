@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Él papalote de los sueños | Casa Hogar Chetumal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --primary: #4a7b9d;
@@ -26,6 +27,7 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         /* Header */
@@ -113,6 +115,7 @@
             padding: 2rem;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
+            animation: fadeInUp 1s ease-out;
         }
         
         .hero h2 {
@@ -136,12 +139,14 @@
             font-weight: 600;
             transition: all 0.3s;
             border: 2px solid var(--secondary);
+            animation: pulse 2s infinite;
         }
         
         .btn:hover {
             background-color: transparent;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: none;
         }
         
         /* Page Content */
@@ -209,6 +214,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .intro-image:hover {
+            transform: scale(1.03);
         }
         
         .intro-image img {
@@ -239,6 +249,7 @@
         
         .problem-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .problem-card h4 {
@@ -253,6 +264,47 @@
         .problem-card i {
             color: var(--accent);
             font-size: 1.5rem;
+        }
+        
+        /* Infographic */
+        .infographic-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .infographic-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .infographic-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+            transition: transform 0.3s;
+        }
+        
+        .infographic-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .infographic-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .infographic-link:hover {
+            text-decoration: underline;
         }
         
         /* Team */
@@ -273,6 +325,7 @@
         
         .team-member:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .member-image {
@@ -309,6 +362,7 @@
             position: relative;
             padding-left: 80px;
             margin-bottom: 2.5rem;
+            animation: fadeInLeft 0.8s ease-out;
         }
         
         .step:before {
@@ -404,6 +458,7 @@
             position: relative;
             margin-bottom: 3rem;
             width: 50%;
+            animation: fadeInRight 0.8s ease-out;
         }
         
         .timeline-item:nth-child(odd) {
@@ -423,6 +478,11 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(10px);
         }
         
         .timeline-content:after {
@@ -572,6 +632,45 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 111, 81, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 111, 81, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 111, 81, 0); }
+        }
     </style>
 </head>
 <body>
@@ -621,7 +720,9 @@
                         <p>Nuestro objetivo es crear conciencia, movilizar recursos y generar soluciones sostenibles para mejorar las condiciones de vida de los niños, niñas y adolescentes en situación de vulnerabilidad.</p>
                     </div>
                     <div class="intro-image">
-                        <img src=https://img.lajornadamaya.mx/ciud1.jpg
+                        <img src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Niños en casa hogar">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -747,16 +848,16 @@
                 <div class="intro-text" style="margin-top: 3rem;">
                     <h3>Objetivos del Proyecto</h3>
                     <p>De parte del CBTIS 253 nosotros como estudiantes pretendemos generar un impacto real en la comunidad de Chetumal para mejorar las condiciones de los niños, niñas y adolescentes de la Casa Hogar.</p>
-                    <p>Nuestra investigación se basa en la infografía previa que puedes visualizar aquí: <a href="<div style="position: relative; width: 100%; height: 0; padding-top: 250.0000%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src
-  </iframe>
-
-<p>Nuestra investigación se basa en la infografía previa que puedes visualizar aquí: 
-    <a href="https://www.canva.com/design/DAGmnIfxiPc/uhYDyxIzkt7iwymtfpIb9Q/view" target="_blank">Ver infografía completa aquí</a></p>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGmnIfxiPc&#x2F;uhYDyxIzkt7iwymtfpIb9Q&#x2F;view?utm_content=DAGmnIfxiPc&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"</a>Ver infografía</a></p>
+                </div>
+                
+                <div class="infographic-container">
+                    <div class="infographic-title">
+                        Infografía: "UN HOGAR EN LA ENCRUCIJADA"
+                    </div>
+                    <img src="https://via.placeholder.com/800x600?text=Infografía+Casa+Hogar" alt="Infografía sobre la Casa Hogar" class="infographic-image">
+                    <a href="https://www.canva.com/design/DAGmnIfxiPc/nC1YdVI278zmfV4CU3UnlA/edit?utm_content=DAGmnIfxiPc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="infographic-link">
+                        Ver infografía completa en Canva
+                    </a>
                 </div>
             </div>
         </section>
@@ -805,6 +906,18 @@
                         Responder encuesta
                     </a>
                 </div>
+                
+                <div class="intro-text" style="margin-top: 3rem;">
+                    <h3>Preguntas Clave de la Investigación</h3>
+                    <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                        <li>¿Cómo consideras que es el apoyo que reciben los residentes en la Casa Hogar?</li>
+                        <li>¿Crees que las autoridades locales prestan suficiente atención a las necesidades de la Casa Hogar?</li>
+                        <li>¿Consideras que la sociedad Chetumaleña está informada sobre esta situación?</li>
+                        <li>¿Estarías dispuesto(a) a apoyar a la Casa Hogar de alguna manera?</li>
+                        <li>¿Crees que los medios de comunicación informan de manera adecuada sobre la situación?</li>
+                        <li>¿Qué tan importante consideras que es garantizar los derechos de los residentes?</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
@@ -828,11 +941,14 @@
                             <li>Las formas de apoyo más mencionadas fueron donaciones, voluntariado y difusión</li>
                             <li>La comunidad identifica la falta de recursos como el principal problema</li>
                             <li>Existe preocupación por las condiciones de vida de los menores</li>
+                            <li>El 86.1% considera muy importante garantizar los derechos de los residentes</li>
+                            <li>El 44.4% cree que los medios no informan adecuadamente sobre la situación</li>
                         </ul>
                         
                         <div style="margin-top: 2rem;">
                             <h4>Interpretación de datos</h4>
                             <p>Los resultados muestran una comunidad sensibilizada y dispuesta a colaborar, especialmente a través de apoyo material. Esto refuerza la importancia de crear canales estructurados de donación y participación voluntaria.</p>
+                            <p>Se destaca la percepción de insuficiencia en la supervisión y condiciones dignas, lo que señala un llamado a mejorar la transparencia, la comunicación social y el financiamiento de este tipo de instituciones.</p>
                         </div>
                     </div>
                     
@@ -849,6 +965,44 @@
                             </div>
                             <div class="bar" style="height: 16.7%;">
                                 <span class="bar-value">16.7%</span>
+                                <span class="bar-label">No</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results-container" style="margin-top: 3rem;">
+                    <div class="chart-container">
+                        <h3 style="text-align: center;">Percepción del apoyo</h3>
+                        <div class="chart">
+                            <div class="bar" style="height: 40%;">
+                                <span class="bar-value">38.9%</span>
+                                <span class="bar-label">Adecuado</span>
+                            </div>
+                            <div class="bar" style="height: 17%;">
+                                <span class="bar-value">16.7%</span>
+                                <span class="bar-label">Moderado</span>
+                            </div>
+                            <div class="bar" style="height: 28%;">
+                                <span class="bar-value">27.8%</span>
+                                <span class="bar-label">Insuficiente</span>
+                            </div>
+                            <div class="bar" style="height: 17%;">
+                                <span class="bar-value">16.7%</span>
+                                <span class="bar-label">Desconozco</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <h3 style="text-align: center;">Conocimiento sobre la Casa Hogar</h3>
+                        <div class="chart">
+                            <div class="bar" style="height: 75%;">
+                                <span class="bar-value">74.3%</span>
+                                <span class="bar-label">Sí</span>
+                            </div>
+                            <div class="bar" style="height: 25%;">
+                                <span class="bar-value">25.7%</span>
                                 <span class="bar-label">No</span>
                             </div>
                         </div>
@@ -922,6 +1076,40 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="intro-text" style="margin-top: 3rem;">
+                    <h3>Recursos necesarios</h3>
+                    <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 1rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <div>
+                                <h4 style="color: var(--secondary);">Recursos Logísticos</h4>
+                                <ul>
+                                    <li>3 mesas plegables</li>
+                                    <li>10 cajas de cartón grande</li>
+                                    <li>Material para empaque</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--secondary);">Recursos de Comunicación</h4>
+                                <ul>
+                                    <li>Folletos impresos (200)</li>
+                                    <li>5 posters informativos</li>
+                                    <li>Material para redes sociales</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--secondary);">Recursos Digitales</h4>
+                                <ul>
+                                    <li>Hashtag: #CBTIS253ConLaCasaHogar</li>
+                                    <li>Plantillas Canva para difusión</li>
+                                    <li>Contenido para redes sociales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -960,7 +1148,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Él papalote de los sueños - Proyecto del CBTIS 253. Todos los derechos reservados.</p>
+            <p>&copy; 2023 Él papalote de los sueños - Proyecto del CBTIS 253. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -981,7 +1169,7 @@
             return false; // Prevenir comportamiento predeterminado del enlace
         }
         
-        // Smooth scrolling for navigation links
+        // Smooth scrolling para enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -991,8 +1179,8 @@
             });
         });
         
-        // Simple animation for elements when they enter viewport
-        const observer = new IntersectionObserver((entries) => {
+        // Animación para elementos cuando entran en el viewport
+        const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
@@ -1000,10 +1188,9 @@
             });
         }, { threshold: 0.1 });
         
-        document.querySelectorAll('.problem-card, .team-member, .step, .bar').forEach(el => {
-            observer.observe(el);
+        document.querySelectorAll('.problem-card, .team-member, .step, .timeline-item').forEach(el => {
+            animationObserver.observe(el);
         });
     </script>
 </body>
 </html>
-           
